@@ -38,6 +38,10 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/banner", bannerRoutes);
 
+app.use("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
+
 
 // app.use("/", (req, res) => {
 //   res.send("Welcome");
