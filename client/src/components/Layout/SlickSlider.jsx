@@ -1,43 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Slider from "react-slick";
-import "../../assets/customCss/SlickSlider.css";
-import axios from "axios";
-import toast from "react-hot-toast";
-import { Link, NavLink } from "react-router-dom";
+import slider1 from "../../assets/images/Home/slider1.jpg"
+import slider2 from "../../assets/images/Home/slider2.jpg"
+import slider3 from "../../assets/images/Home/slider3.webp"
+import "../../assets/customCss/Main.css"
 
 const SlickSlider = () => {
-  const [category, setCategory] = useState([]);
-  //getAll category
-  const getAllCategory = async () => {
-    try {
-      const { data } = await axios.get("/api/v1/category/get-category");
-      console.log(data);
-      if (data?.success) {
-        setCategory(data?.category);
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error("something went wrong in category");
-    }
-  };
-
-  useEffect(() => {
-    getAllCategory();
-  }, []);
-
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -46,7 +27,7 @@ const SlickSlider = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -62,36 +43,48 @@ const SlickSlider = () => {
   return (
     <>
       <div>
-        <div className="homeCardSlider-top mt-5">
-          <h1> SHOP BY POPULAR CATEGORY</h1>
-        </div>
+        {/* <div className="homeCardSlider-top mt-5">
+          <h2> Best Seller</h2>
+          <p>Top view in the week</p>
+        </div> */}
 
-        <div style={{ backgroundColor: "rgb(233 233 233)" }}>
+        <div style={{ backgroundColor: "#f3fcff",padding:"3rem" }}>
           <div
             className="slider-container "
             style={{ width: "95%", margin: "auto" }}
           >
             <Slider {...settings}>
-              {category.length > 0
-                ? category.map((c, id) => (
-                    <>
-                    
-                    <div className="homeCardSlider">
-                      <img
-                        src={`${import.meta.env.VITE_REACT_APP_MAIN_URL}${c.categoryImage}`}
-                        alt={c.name}
-                        
-                      />
-                      <div>
-                      <h4 className="fw-bold" style={{ textAlign:"center", color:"gray"}}> {c.name}</h4>
-                      </div>
-                      
-                    </div>
-                    </>
+            <div className="homeCardSlider">
+                  <img
+                    src={slider3}
+                    alt="image"
+                  />
+                </div>
+                <div className="homeCardSlider">
+                  <img
+                    src={slider2}
+                    alt="image"
+                  />
+                </div>
+                <div className="homeCardSlider">
+                  <img
+                    src={slider3}
+                    alt="image"
+                  />
+                </div>
+                <div className="homeCardSlider">
+                  <img
+                    src={slider2}
+                    alt="image"
+                  />
+                </div>
+                <div className="homeCardSlider">
+                  <img
+                    src={slider3}
+                    alt="image"
+                  />
+                </div>
 
-                  ))
-                : null}
-              
             </Slider>
           </div>
         </div>

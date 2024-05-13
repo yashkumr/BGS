@@ -1,32 +1,36 @@
 import React from "react";
-import "../../assets/customCss//Footer.css"
+import { NavLink } from "react-router-dom";
+import footer2 from "../../assets/images/Icons/footer2.png";
+import footer3 from "../../assets/images/Icons/footer3.webp";
+import footer4 from "../../assets/images/Icons/footer4.webp";
+import "../../assets/customCss/Footer.css";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa6";
+
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { AiTwotoneMail } from "react-icons/ai";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaWhatsapp,
-} from "react-icons/fa";
 
 const Footer = () => {
   return (
     <>
       <div className="container-fluid ">
-        <footer className="bg-dark text-white p-4">
+        <footer className="utility-footer text-white p-4">
           <div className="text-center text-md-left">
             <div className="row text-center text-md-left">
               <div className=" foot-content col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 className=" foot-heading text-uppercase mb-4  text-warning">
-                  Company Name
+                  Companies
                 </h5>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio nostrum adipisci quod, fuga animi totam
-                  dignissimos, accusantium ut voluptatum ex eius vel quaerat
-                  iste eligendi quis ab aspernatur vitae numquam.
-                </p>
+                <div className="foot-content-img">
+
+                
+                 <img src={footer2}/>
+                 <img src={footer3}/>
+                 <img src={footer4}/>
+               
+                 </div>
               </div>
               <div className=" foot-content col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 className="text-uppercase mb-4 foot-heading text-warning">
@@ -34,22 +38,22 @@ const Footer = () => {
                 </h5>
                 <p>
                   <a href="#" className="text-white ">
-                    About us
+                  Green Business Energy
                   </a>
                 </p>
                 <p>
                   <a href="#" className="text-white ">
-                    The Provider
+                  Business Energy
                   </a>
                 </p>
                 <p>
                   <a href="#" className="text-white ">
-                    Help & contact
+                  Business Electricity
                   </a>
                 </p>
                 <p>
                   <a href="#" className="text-white ">
-                    Blog
+                  Business Gas
                   </a>
                 </p>
               </div>
@@ -58,18 +62,18 @@ const Footer = () => {
                   UseFul Links
                 </h5>
                 <p>
-                  <a href="#" className="text-white ">
+                  <a href="/term-condition" className="text-white ">
                     Terms & conditions
                   </a>
                 </p>
                 <p>
-                  <a href="#" className="text-white ">
+                  <a href="/policy" className="text-white ">
                     privacy policy
                   </a>
                 </p>
                 <p>
-                  <a href="#" className="text-white ">
-                    return policy
+                  <a href="/complaint" className="text-white ">
+                    complaint
                   </a>
                 </p>
                 <p>
@@ -84,19 +88,19 @@ const Footer = () => {
                 </h5>
                 <p className="p-2">
                   <IoHomeOutline />
-                  &nbsp; New York, NY, 2333, US
+                  &nbsp; 71-75, Shelton Street, Covent Garden, London WC2H 9JQ
                 </p>
                 <p>
                   <AiTwotoneMail />
-                  &nbsp; Deepsingh@gmail.com
+                  &nbsp; info@bgsenergy.co.uk
                 </p>
                 <p>
                   <MdOutlineLocalPhone />
-                  &nbsp; 91+ 9335140873
+                  &nbsp; 0144 4390 132
                 </p>
                 <p>
                   <IoHomeOutline />
-                  &nbsp; +01 335 633 77
+                  &nbsp; 01444390139
                 </p>
               </div>
             </div>
@@ -104,13 +108,13 @@ const Footer = () => {
           <hr className="mb-4" />
           <div className=" row">
             <div className="foot-heading-copy col-md-12 text-center">
-              CopyRight @2024 All right reserved by :
+              CopyRight @2024 All right reserved by :BGS Energy LTD
               <a href="#">
                 <strong className="text-warning">The Providers</strong>
               </a>
               <p></p>
             </div>
-            {/* <div className="col-md-5 col-lg-4">
+            <div className="col-md-5 col-lg-4">
               <div className=" foot-icons text-md-right text-center">
                 <ul className="list-unstyled list-inline">
                   <li className="list-inline-item">
@@ -120,22 +124,22 @@ const Footer = () => {
                   </li>
                   <li className="list-inline-item">
                     <a href="#" className="btn-floating btn-sm text-white">
-                      <FaInstagram />
+                      <AiFillTwitterCircle />
                     </a>
                   </li>
                   <li className="list-inline-item">
                     <a href="#" className="btn-floating btn-sm text-white">
-                      <FaLinkedin />
+                      <AiTwotoneMail />
                     </a>
                   </li>
                   <li className="list-inline-item">
                     <a href="#" className="btn-floating btn-sm text-white">
-                      <FaWhatsapp />
+                      <FaLinkedinIn/>
                     </a>
                   </li>
                 </ul>
               </div>
-            </div> */}
+            </div>
           </div>
         </footer>
       </div>

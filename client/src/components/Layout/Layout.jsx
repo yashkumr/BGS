@@ -1,36 +1,35 @@
-import React from "react";
-import Header from "./Header.jsx";
+import React from 'react'
 import { Helmet } from "react-helmet";
-import { Toaster } from "react-hot-toast";
-import Footer from "./Footer.jsx";
+import Header from './Header';
+import { Toaster } from 'react-hot-toast';
+import Footer from './Footer';
 
 const Layout = ({ children, title, description, keywords, author }) => {
   return (
     <>
-      <div>
+     <div>
         <Helmet>
-          <meta charSet="utf-8" />
+        <meta charSet="utf-8" />
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
           <meta name="author" content={author} />
           <title>{title}</title>
         </Helmet>
-
-        <Header />
-        <Toaster />
+        <Header/>
+        <Toaster/>
         <main style={{ minHeight: "50vh" }}>{children}</main>
-
-        <Footer />
-      </div>
+        <Footer/>
+     </div>
     </>
-  );
-};
+  )
+}
 
 Layout.defaultProps = {
-  title: "register now",
-  description: "welcome to 1mg",
-  keywords: "top-product, trending-product",
-  author: "Abadhesh Tomar",
-}; 1      
+    title: "The BGS Energy",
+    description: "welcome to BGS Energy",
+    keywords: "top-product, trending-product",
+    author: "BGS Energy",
+  };
+  
 
-export default Layout;
+export default Layout

@@ -1,67 +1,61 @@
 import { Toaster } from "react-hot-toast";
-import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Login from "./pages/Auth/Login.jsx";
-import Register from "./pages/Auth/Register.jsx";
-import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
-import PageNotFound from "./pages/PageNotFound.jsx";
-import AdminRoute from "./Routes/AdminRoute.jsx";
-import UserRoute from "./Routes/UserRoute.jsx";
-import UserDashboard from "./pages/User/UserDashboard.jsx";
-import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
-
-import Category from "./pages/Admin/Category/index.jsx";
-import Products from "./pages/Admin/Products/index.jsx";
-import HomeBanner from "./pages/Admin/Banner/HomeBanner.jsx";
-import UpdateBanner from "./pages/Admin/Banner/UpdateBanner.jsx";
-import UpdateProduct from "./pages/Admin/Products/UpdateProduct.jsx";
-import UserProfile from "./pages/User/UserProfile.jsx";
-import AllUser from "./pages/Admin/User/AllUser.jsx";
-import ProductListPage from "./pages/ProductListPage/index.jsx";
-import ProductDetails from "./pages/ProductDetails.jsx";
-import CartPage from "./pages/CartPage.jsx";
-import Shipping from "./pages/Shipping.jsx";
+import { Route, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Contact from "./pages/Contact.jsx";
+import BusinessElectricity from "./pages/BusinessElectricity.jsx";
+import DomesticEnergy from "./pages/DomesticEnergy.jsx";
+import CorporateEnergy from "./pages/CorporateEnergy.jsx";
+import BusinessTelicom from "./pages/BusinessTelicom.jsx";
+import Conditions from "./pages/Conditions.jsx";
+import Complaint from "./pages/Complaint.jsx";
+import Policy from "./pages/Policy.jsx";
+import Business from "./pages/Business.jsx";
+import BestPrices from "./pages/BestPrices.jsx";
+import GasInfo from "./pages/GasInfo.jsx";
+import Quotes from "./pages/Quotes.jsx";
+import Thanku from "./pages/Thanku.jsx";
+import Lbu from "./pages/Lbu.jsx";
+import GasElecric from "./pages/GasElecric.jsx";
+import AllSector from "./pages/AllSector.jsx";
+import Guides from "./pages/Guides.jsx";
+import About from "./pages/About.jsx";
+import Supplier from "./pages/Supplier.jsx";
+import OurSector from "./pages/OurSector.jsx";
+import BusinessWater from "./pages/BusinessWater.jsx";
 
 function App() {
+
+
   return (
     <>
-      <Toaster />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:slug" element={<ProductListPage />} />
-        <Route path="/product/:slug" element={<ProductDetails />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/shipping" element={<Shipping />} />
-
-        <Route path="/dashboard" element={<AdminRoute />}>
-          <Route path="admin" element={<AdminDashboard />} />
-          <Route path="admin/create-product" element={<Products />} />
-          <Route
-            path="admin/update-product/:slug"
-            element={<UpdateProduct />}
-          />
-          <Route path="admin/banner" element={<HomeBanner />} />
-          <Route path="admin/all-users" element={<AllUser />} />
-          <Route path="admin/create-category" element={<Category />} />
-          <Route
-            path="admin/banner/update-banner/:slug"
-            element={<UpdateBanner />}
-          />
-        </Route>
-
-        <Route path="/dashboard" element={<UserRoute />}>
-          <Route path="user" element={<UserDashboard />} />
-
-          <Route path="user/profile" element={<UserProfile />} />
-        </Route>
-
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+     <Toaster/>
+     <Routes>
+       <Route path="/" element={<Home/>}/>
+       <Route path="/contact-us" element={<Contact/>}/>
+       <Route path="/business-electricity" element={<BusinessElectricity/>}/>
+       <Route path="/domestic-energy" element={<DomesticEnergy/>}/>
+       <Route path="/corporate-energy" element={<CorporateEnergy/>}/>
+       <Route path="/business" element={<Business/>}/>
+       <Route path="/business-telicom" element={<BusinessTelicom/>}/>
+       <Route path="/term-condition" element={<Conditions/>}/>
+       <Route path="/complaint" element={<Complaint/>}/>
+       <Route path="/policy" element={<Policy/>}/>
+       <Route path="/best-price" element={<BestPrices/>}/>
+       <Route path="/gas-info" element={<GasInfo/>}/>
+       <Route path="/quotes" element={<Quotes/>}/>
+       <Route path="/thanku" element={<Thanku/>}/>
+       <Route path="/lbu" element={<Lbu/>}/>
+       <Route path="/gas-electric" element={<GasElecric/>}/>
+       <Route path="/all-sector" element={<AllSector/>}/>
+       <Route path="/guides" element={<Guides/>}/>
+       <Route path="/our-sector" element={<OurSector/>}/>
+       <Route path="/supplier" element={<Supplier/>}/>
+       <Route path="/about-us" element={<About/>}/>
+       <Route path="/business-water" element={<BusinessWater/>}/>
+     </Routes>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
